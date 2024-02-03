@@ -1,11 +1,5 @@
-// TODO: write code here
+console.log("app.js included2");
 
-// comment this to pass build
-const unusedVariable = "variable";
+import playGoblin from "./goblin";
 
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
-}
-
-console.log("app.js included");
+playGoblin();
