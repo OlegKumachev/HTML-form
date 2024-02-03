@@ -4,7 +4,7 @@ export default function playGoblin() {
     const newDiv = document.createElement("div");
     const img = document.createElement("img");
 
-    img.src = "goblin.png";
+    img.src = "https://github.com/netology-code/ahj-homeworks/raw/AHJ-50/dom/pic/goblin.png";
     img.alt = "Goblin";
     newDiv.appendChild(img);
 
