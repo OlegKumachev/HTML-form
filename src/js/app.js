@@ -1,5 +1,4 @@
-console.log("app.js included2");
-
-import playGoblin from "./goblin";
-
-playGoblin();
+import Game from "./game.js";
+import playGoblin from "./goblin.js";
+playGoblin()
+const game = new Game();
