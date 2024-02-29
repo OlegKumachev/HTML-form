@@ -38,7 +38,7 @@ export default class Game {
   createGoblin() {
     if (this.missedGoblinHits >= this.maxMissedGoblinHits) {
       this.endGame();
-      return; // Выходим из метода, чтобы предотвратить создание новых гоблинов после завершения игры
+      return; 
     }
   
     const img = document.createElement("img");
