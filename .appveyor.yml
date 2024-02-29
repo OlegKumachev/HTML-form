@@ -18,3 +18,11 @@ deploy_script: # скрипт развёртывания
 - git config --global user.email ci@appveyor.com
 - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
 - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+  - echo "GitHub Token: $GITHUB_TOKEN" # Выводим значение токена для проверки
+  - git config --global --list # Выводим текущие глобальные настройки Git для диагностики
+  - git remote -v # Выводим список удаленных репозиториев Git для проверки
+  - git status # Выводим статус репозитория Git для диагностики
+  - git branch # Выводим текущую ветку для проверки
+  - git log -1 # Выводим последний коммит для проверки
+  - git remote show origin # Выводим информацию о удаленном репозитории для проверки
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
