@@ -1,12 +1,11 @@
-import moveGoblin from './goblin.js';
-
+// game.js
 export default class Game {
   constructor() {
     this.score = 0;
     this.missedGoblinHits = 0;
     this.maxMissedGoblinHits = 5;
     this.scoreDisplay = document.getElementById('score-display');
-    this.missedHitsDisplay = document.getElementById('missed-hits-display'); // новый элемент для отображения промахов
+    this.missedHitsDisplay = document.getElementById('missed-hits-display');
     this.init();
     console.log('start game');
   }
@@ -15,7 +14,10 @@ export default class Game {
     this.gameContainer = document.getElementById('game-container');
     this.gameContainer.addEventListener('click', this.cellClickHandler.bind(this));
     this.updateScore();
-    this.updateMissedHits(); 
+    this.updateMissedHits();
+
+    // Вызываем функцию для создания гоблина с интервалом в 1 секунду
+    setInterval(() => this.createGoblin(), 1000);
   }
 
   cellClickHandler(event) {
@@ -28,13 +30,28 @@ export default class Game {
     }
 
     this.updateScore();
-    this.updateMissedHits(); 
+    this.updateMissedHits();
 
     if (this.missedGoblinHits >= this.maxMissedGoblinHits) {
       this.endGame();
-    } else {
-      moveGoblin();
     }
+  }
+
+  createGoblin() {
+    if (this.missedGoblinHits >= this.maxMissedGoblinHits) {
+      this.endGame();
+      return; // Выходим из метода, чтобы предотвратить создание новых гоблинов после завершения игры
+    }
+  
+    const img = document.createElement("img");
+    img.src = "https://github.com/netology-code/ahj-homeworks/raw/AHJ-50/dom/pic/goblin.png";
+    img.alt = "Goblin";
+    img.classList.add("goblin");
+  
+    const field = document.querySelectorAll(".cellField");
+    const newPosition = Math.floor(Math.random() * field.length);
+    field.forEach(cell => cell.innerHTML = ''); 
+    field[newPosition].appendChild(img);
   }
 
   updateScore() {
@@ -56,4 +73,4 @@ export default class Game {
     this.updateScore();
     this.updateMissedHits(); 
   };
-};
+}
