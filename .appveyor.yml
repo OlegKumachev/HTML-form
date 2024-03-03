@@ -10,7 +10,7 @@ build: off
 # кеширование
 # команда установки зависимостей
 build_script:
-- yarn build # команда сборки
+- yarn start # команда сборки
 
 deploy_script: # скрипт развёртывания
 - git config --global credential.helper store
