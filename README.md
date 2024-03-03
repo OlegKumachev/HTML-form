@@ -4,4 +4,5 @@ https://olegkumachev.github.io/EventProcessing/
 [![Build status](https://ci.appveyor.com/api/projects/status/OlegKumachev/eventprocessing?svg=true)](https://ci.appveyor.com/project/OlegKumachev/eventprocessing)
 
 
-[Ссылка на GitHub Pages]([ССЫЛКА_НА_GITHUB_PAGES](https://olegkumachev.github.io/EventProcessing/)https://olegkumachev.github.io/EventProcessing/)
+[Ссылка на GitHub Pages](https://olegkumachev.github.io/EventProcessing/)
+
