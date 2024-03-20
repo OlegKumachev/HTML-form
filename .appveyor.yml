@@ -8,6 +8,7 @@ install:
   - yarn
 build_script:
   - yarn build # команда сборки
+  - yarn start
   
 test_script:
   - yarn test
