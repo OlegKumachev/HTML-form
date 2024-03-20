@@ -1,5 +1,5 @@
 image: Ubuntu1804 # образ для сборки
-stack: node 16 # окружение
+stack: node 18 # окружение
 branches:
   only:
   - master # ветка git
@@ -8,7 +8,10 @@ install:
   - yarn
 build_script:
   - yarn start # команда сборки
-
+  
+test_script:
+  - yarn test
+  
 deploy_script: # скрипт развёртывания
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
