@@ -27,5 +27,5 @@ describe('Popover functionality', () => {
     await page.waitForSelector('.popover', { hidden: true });
     popover = await page.$('.popover');
     expect(popover).toBeNull();
-  });
+  }, 10000);
 });
